@@ -77,7 +77,10 @@ Note: If an `iccprofiles` folder exists in the build context, it is copied into 
 - `CLIENT_MAP_PORT_FROM` / `CLIENT_MAP_PORT_TO`: Explicitly override RMI port mapping if the external callback port differs; otherwise left empty.
 - `SVC_INSTANCES`: Number of parallel worker instances. Default `4`.
 - `IMAGEMAGICK_POLICY_AUTOCONFIG`: Auto-tune ImageMagick limits from the detected container memory limit. Default `false`.
+- `IMAGEMAGICK_POLICY_TIME`: Optional override for the ImageMagick `resource/time` limit.
 - `IMAGEMAGICK_POLICY_MEMORY`, `IMAGEMAGICK_POLICY_MAP`, `IMAGEMAGICK_POLICY_DISK`, `IMAGEMAGICK_POLICY_THREAD`, `IMAGEMAGICK_POLICY_MAX_MEMORY_REQUEST`: Optional explicit overrides for ImageMagick resource limits.
+- `IMAGEMAGICK_POLICY_AREA`, `IMAGEMAGICK_POLICY_FILE`, `IMAGEMAGICK_POLICY_LIST_LENGTH`, `IMAGEMAGICK_POLICY_WIDTH`, `IMAGEMAGICK_POLICY_HEIGHT`: Optional overrides for additional ImageMagick resource limits.
+- `SERVICECLIENT_JAVA_OPTIONS`: Optional JVM options string; the entrypoint merges `-Djava.rmi.server.hostname=<value>` into it for RMI callback configuration.
 - `OFFICE_URL`: URL of an office conversion service. If unset or unreachable, office previews are disabled.
 - `OFFICE_VALIDATE_CERTS`: Validate SSL certificates for `OFFICE_URL`. Set to `false` to disable validation.
 - `VOLUMES_INFO`: JSON string to fully replace the `volumes` section in `hosts.xml`.
